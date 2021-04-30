@@ -9,18 +9,25 @@ import java.util.Scanner;
 public class Ejercicio2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        // Declaracion e inicializacion de matrices
         int[][] matrizA = new int[4][6];
         int[][] matrizB = new int[4][6];
+        // Declaracion e inicializacion de variables
         int primoMayor = 0;
         int repetidor=0;
+        // Ingresar los valores de la matriz A
         System.out.println("Ingresar los valores de la matriz A");
         ingresarmatriz(matrizA);
+        // Ingresar los valores de la matriz B
         System.out.println("Ingresar los valores de la matriz B");
         ingresarmatriz(matrizB);
+        // Presentar la matriz A
         System.out.println("MATRIZ A");
         presentarMatriz(matrizA);
+        // Presentar la matriz B
         System.out.println("MATRIZ B ");
         presentarMatriz(matrizB);
+        // Proceso para saber cual es el mayor de los primos de una matriz en otra 
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 6; j++) {
                 if (comprobarprimo(matrizA[i][j])) {
@@ -49,6 +56,7 @@ public class Ejercicio2 {
         }
         System.out.println("El numero primo "+primoMayor+" de la primera matriz se repite "+repetidor+" en la segunda matriz");   
     }
+    // Proceso para ingresar la matriz
     static void ingresarmatriz(int matriz[][]){
         Scanner sc = new Scanner(System.in);
         for (int i = 0; i < 4; i++) {
@@ -58,16 +66,17 @@ public class Ejercicio2 {
             }
         }
     }
+    // Proceso para presentar la matriz
     static void presentarMatriz(int matriz[][]){
         
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 6; j++) {
                 System.out.print(matriz[i][j]+"\t");
-                
             }
             System.out.println();
         }
     }
+    // Proceso para comprobar primo
     static boolean comprobarprimo(int numero) {
         boolean valido = false;
         int cont=0;
